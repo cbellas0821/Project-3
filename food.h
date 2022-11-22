@@ -54,7 +54,7 @@ public:
          float Zinc, int VitA, float B12, float B6, float VitC, float VitE, float VitK);
 };
 
-// Default constructor initiaalizes all values as empty or 0
+// Default constructor initializes all values as empty or 0
 Food::Food()
 {
     category = "";
