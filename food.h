@@ -96,6 +96,7 @@ Food::Food()
     vitK = 0.0;
 }
 
+// Food constructor to read and store data from food.csv
 Food::Food(string Category, string Description, int FoodID, int AlphaCarotene, int BetaCarotene, int BetaCryptoxanthin,
            float Carbohydrate, int Cholesterol, float Choline, float Fiber, int LuteinZeaxanthin, int Lycopene, float Niacin,
            float Protein, int Retinol, float Riboflavin, float TotalSugar, float Thiamin, float Water, float MonoFat, float Polyfat,
