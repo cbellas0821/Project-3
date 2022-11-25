@@ -10,14 +10,16 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <list>
 #include <vector>
 #include "food.h"
-#include "foodMap.h"
 #include "processData.h"
 
 int main()
 {
 
+    list<Food> tempList;
     int numFoodObj = 0;
     string line;
     fstream foodFile("food.csv", ios::in);
@@ -30,9 +32,9 @@ int main()
         while(getline(foodFile, line))
         {
 
-            // Call processData here and assign to a food object
-            // Insert food Object into a vector until the user decides what information they want displayed (maps have key value pairs => key is food string, value is assoicated w/chosen nutrient)
-            // Or would it be easier to get what the user wants then process the data?
+            // Parsed data is all added to the list for later use
+            tempList.push_back(processData(line));
+    
         }
         
     }
