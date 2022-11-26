@@ -15,11 +15,12 @@
 #include <vector>
 #include "food.h"
 #include "processData.h"
+#include "bucketSort.h"
 
 int main()
 {
 
-    list<Food> tempList;
+    vector<Food> tempList;
     int numFoodObj = 0;
     string line;
     fstream foodFile("food.csv", ios::in);
@@ -42,8 +43,18 @@ int main()
         cout << "Cannot Open File" << endl;
 
 
-    // Once all data has been processed and added to vecotr, provide user option between nutrient importance & BFS v. DFS
-    // Insert all items into ordered map 
+    // Once all data has been processed and added to list, provide user option between nutrient importance & BFS v. DFS
+    // Saturated Fat as an example
 
+    vector<pair<string, float>> sortList;
+    vector<Food>::iterator it;
+
+    for(it = tempList.begin(); it != tempList.end(); it++)
+    {
+        sortList.push_back(make_pair(it->description, it->satFat));
+    }
+
+    sortList = bucketSort(sortList);
+    // Run sorting algorithms
 
 }
