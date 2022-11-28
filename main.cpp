@@ -16,6 +16,7 @@
 #include "food.h"
 #include "processData.h"
 #include "bucketSort.h"
+#include "shellSort.h"
 
 int main()
 {
@@ -55,6 +56,7 @@ int main()
     }
 
     sortList = bucketSort(sortList);
+   
     // Run sorting algorithms
 
 }
