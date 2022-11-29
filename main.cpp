@@ -17,6 +17,8 @@
 #include "processData.h"
 #include "bucketSort.h"
 #include "shellSort.h"
+#include <chrono>
+using namespace std::chrono;
 
 int main()
 {
@@ -55,8 +57,11 @@ int main()
         sortList.push_back(make_pair(it->description, it->satFat));
     }
 
+    auto start = high_resolution_clock::now();
     sortList = bucketSort(sortList);
-   
-    // Run sorting algorithms
+    auto stop = high_resolution_clock::now();
 
+    //Run sorting algorithms
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << duration.count() << endl;
 }
