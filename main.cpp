@@ -1,12 +1,3 @@
-//  Team Name: Binary Beasts
-/*  Team Members:
-    Chloe Bellas
-    Jesse Landis
-    Agustin Giraldo
-*/
-//  Project Title: SmartEats
-/*  Description: TBD
-*/
 
 #include <iostream>
 #include <fstream>
@@ -17,8 +8,11 @@
 #include "processData.h"
 #include "bucketSort.h"
 #include "shellSort.h"
-#include <chrono>
-using namespace std::chrono;
+
+
+
+
+using namespace std;
 
 int main()
 {
@@ -26,8 +20,8 @@ int main()
     vector<Food> tempList;
     int numFoodObj = 0;
     string line;
-    fstream foodFile("food.csv", ios::in);
-    
+    fstream foodFile("/Users/agustingiraldo/GroupProject3/food.csv", ios::in);
+
 
     if(foodFile.is_open())
     {
@@ -38,9 +32,9 @@ int main()
 
             // Parsed data is all added to the list for later use
             tempList.push_back(processData(line));
-    
+
         }
-        
+
     }
     else
         cout << "Cannot Open File" << endl;
@@ -49,19 +43,15 @@ int main()
     // Once all data has been processed and added to list, provide user option between nutrient importance & BFS v. DFS
     // Saturated Fat as an example
 
-    vector<pair<string, float>> sortList;
-    vector<Food>::iterator it;
+    string attribute = "protein";
 
-    for(it = tempList.begin(); it != tempList.end(); it++)
-    {
-        sortList.push_back(make_pair(it->description, it->satFat));
+    bucketSort(tempList,attribute);//add string of a
+    //shellSort(tempList,attribute);
+
+    // Run sorting algorithms
+    for(int i =0; i < tempList.size() ;i++){
+        cout <<tempList[i].Get_Description() <<tempList[i].Get_protein() << endl;
     }
 
-    auto start = high_resolution_clock::now();
-    sortList = bucketSort(sortList);
-    auto stop = high_resolution_clock::now();
 
-    //Run sorting algorithms
-    auto duration = duration_cast<microseconds>(stop - start);
-    cout << duration.count() << endl;
 }
