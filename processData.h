@@ -13,23 +13,23 @@ Food processData(string line)
     string word;
 
     // Food Class Parameters
-    string category;
-    string description;
-    int foodID;
-    int alphaCarotene;
-    int betaCarotene;
-    int betaCryptoxanthin;
-    float carbohydrate;
-    int cholesterol;
-    float choline;
-    float fiber;
-    int luteinZeaxanthin;
-    int lycopene;
-    float niacin;
-    float protein;
-    int retinol;
-    float riboflavin;
-    float totalSugar;
+    string category;                
+    string description;            
+    int foodID;                     
+    int alphaCarotene;              
+    int betaCarotene;               
+    int betaCryptoxanthin;          
+    float carbohydrate;             
+    int cholesterol;                
+    float choline;                  
+    float fiber;                    
+    int luteinZeaxanthin;           
+    int lycopene;                   
+    float niacin;                   
+    float protein;                  
+    int retinol;                    
+    float riboflavin;               
+    float totalSugar;               
     float thiamin;
     float water;
     float monoFat;
@@ -60,7 +60,7 @@ Food processData(string line)
 
     while(getline(str, word, '"'))
     {
-
+        
         getline(str, word, '"');
 
         // Catches if data is formatted in table incorrectly
@@ -71,7 +71,6 @@ Food processData(string line)
         catch(const std::exception& e)
         {
             std::cerr << e.what() << '\n';
-            continue;
         }
 
         // Assigns data accordingly
@@ -141,22 +140,22 @@ Food processData(string line)
             b6 = stof(word);
         else if (n == 32)
             vitC = stof(word);
-        else if (n == 33)
+        else if (n == 33)   
             vitE = stof(word);
         else if (n == 34)
             vitK = stof(word);
 
         getline(str, word, ',');
 
-        ++n;
+        ++n;   
     }
 
     //Creates a food object from parsed data
     Food newFood(category, description, foodID, alphaCarotene, betaCarotene,
                  betaCryptoxanthin, carbohydrate, cholesterol,  choline, fiber,
                  luteinZeaxanthin,  lycopene,  niacin,  protein, retinol,  riboflavin,
-                 totalSugar,thiamin, water,  monoFat,  polyfat, satFat,
-                 lipidTotal, calcium, copper,  iron,  magnesium,  phosphorus,potassium,
+                  totalSugar,thiamin, water,  monoFat,  polyfat, satFat,
+                  lipidTotal, calcium, copper,  iron,  magnesium,  phosphorus,potassium,
                  sodium, zinc, vitA, b12,  b6,  vitC,  vitE, vitK);
 
     return newFood;
