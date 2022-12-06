@@ -1,6 +1,6 @@
 # Project-3
 
-Desktop Application to help you make dietary choices based on the nutritional content of different foods.
+Desktop Application to help you make dietary choices based on the nutritional content of different foods. Used Visual Studio CLR project. I had to download this extension from the Visual Studio installer. 
 
 #1 Open Application
 
