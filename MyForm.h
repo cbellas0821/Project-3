@@ -447,59 +447,33 @@ namespace MaybeThisIsIT {
 		label18->Text = gcnew String(time_taken.c_str());
 
 
-		vector<Food>::iterator it;
-
-		for (it = tempList.begin(); it != tempList.end(); it++)
-		{
-			sortList.push_back(make_pair(it->description, it->protein));
-		}
-
-
-
 
 		label2->Text = nutrient;
 		if (minimum) {
-			label3->Text = "1. " + gcnew String(sortList[0].first.c_str());
-			label4->Text = "2. " + gcnew String(sortList[1].first.c_str());
-			label5->Text = "3. " + gcnew String(sortList[2].first.c_str());
-			label6->Text = "4. " + gcnew String(sortList[3].first.c_str());
-			label7->Text = "5. " + gcnew String(sortList[4].first.c_str());
-			label8->Text = "6. " + gcnew String(sortList[5].first.c_str());
-			label9->Text = "7. " + gcnew String(sortList[6].first.c_str());
-			label10->Text = "8. " + gcnew String(sortList[7].first.c_str());
-			label11->Text = "9. " + gcnew String(sortList[8].first.c_str());
-			label12->Text = "10. " + gcnew String(sortList[9].first.c_str());
-			/*label14->Text = gcnew String(sortList[1].first.c_str());
-			label15->Text = gcnew String(sortList[2].first.c_str());
-			label16->Text = gcnew String(sortList[3].first.c_str());
-			label17->Text = gcnew String(sortList[4].first.c_str());
-			label18->Text = gcnew String(sortList[5].first.c_str());
-			label19->Text = gcnew String(sortList[6].first.c_str());
-			label20->Text = gcnew String(sortList[7].first.c_str());
-			label21->Text = gcnew String(sortList[8].first.c_str());
-			label22->Text = gcnew String(sortList[9].first.c_str());*/
+			label3->Text = "1. " + gcnew String(tempList[0].description.c_str());
+			label4->Text = "2. " + gcnew String(tempList[1].description.c_str());
+			label5->Text = "3. " + gcnew String(tempList[2].description.c_str());
+			label6->Text = "4. " + gcnew String(tempList[3].description.c_str());
+			label7->Text = "5. " + gcnew String(tempList[4].description.c_str());
+			label8->Text = "6. " + gcnew String(tempList[5].description.c_str());
+			label9->Text = "7. " + gcnew String(tempList[6].description.c_str());
+			label10->Text = "8. " + gcnew String(tempList[7].description.c_str());
+			label11->Text = "9. " + gcnew String(tempList[8].description.c_str());
+			label12->Text = "10. " + gcnew String(tempList[9].description.c_str());
+
 		}
 		else {
-			label3->Text = "1. " + gcnew String(sortList[sortList.size() - 1].first.c_str());
-			label4->Text = "2. " + gcnew String(sortList[sortList.size() - 2].first.c_str());
-			label5->Text = "3. " + gcnew String(sortList[sortList.size() - 3].first.c_str());
-			label6->Text = "4. " + gcnew String(sortList[sortList.size() - 4].first.c_str());
-			label7->Text = "5. " + gcnew String(sortList[sortList.size() - 5].first.c_str());
-			label8->Text = "6. " + gcnew String(sortList[sortList.size() - 6].first.c_str());
-			label9->Text = "7. " + gcnew String(sortList[sortList.size() - 7].first.c_str());
-			label10->Text = "8. " + gcnew String(sortList[sortList.size() - 8].first.c_str());
-			label11->Text = "9. " + gcnew String(sortList[sortList.size() - 9].first.c_str());
-			label12->Text = "10. " + gcnew String(sortList[sortList.size() - 10].first.c_str());
-			/*label13->Text = gcnew String(sortList[sortList.size() - 1].first.c_str());
-			label14->Text = gcnew String(sortList[sortList.size() - 2].first.c_str());
-			label15->Text = gcnew String(sortList[sortList.size() - 3].first.c_str());
-			label16->Text = gcnew String(sortList[sortList.size() - 4].first.c_str());
-			label17->Text = gcnew String(sortList[sortList.size() - 5].first.c_str());
-			label18->Text = gcnew String(sortList[sortList.size() - 6].first.c_str());
-			label19->Text = gcnew String(sortList[sortList.size() - 7].first.c_str());
-			label20->Text = gcnew String(sortList[sortList.size() - 8].first.c_str());
-			label21->Text = gcnew String(sortList[sortList.size() - 9].first.c_str());
-			label22->Text = gcnew String(sortList[sortList.size() - 10].first.c_str());*/
+			label3->Text = "1. " + gcnew String(tempList[tempList.size() - 1].description.c_str());
+			label4->Text = "2. " + gcnew String(tempList[tempList.size() - 2].description.c_str());
+			label5->Text = "3. " + gcnew String(tempList[tempList.size() - 3].description.c_str());
+			label6->Text = "4. " + gcnew String(tempList[tempList.size() - 4].description.c_str());
+			label7->Text = "5. " + gcnew String(tempList[tempList.size() - 5].description.c_str());
+			label8->Text = "6. " + gcnew String(tempList[tempList.size() - 6].description.c_str());
+			label9->Text = "7. " + gcnew String(tempList[tempList.size() - 7].description.c_str());
+			label10->Text = "8. " + gcnew String(tempList[tempList.size() - 8].description.c_str());
+			label11->Text = "9. " + gcnew String(tempList[tempList.size() - 9].description.c_str());
+			label12->Text = "10. " + gcnew String(tempList[tempList.size() - 10].description.c_str());
+
 		}
 	}
 	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
